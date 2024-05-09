@@ -10,25 +10,29 @@ const App = () => {
     const APIKEY = 'e00d19ad612641c6a75110738241603'
     const [witherData, setWitherData] = useState({})
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
     const getWither = async function (city) {
         setIsLoading(true)
+
+        console.log(witherData)
 
         try {
             const response = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${city}&aqi=no`)
             setWitherData(response.data)
         } catch (e) {
             if (e?.response?.status === 400) {
-                alert('There is no such city')
-            } else if (e.response.status === 401) {
-                alert('Вы не авторизованы')
-            } else if (e.response.status === 402) {
-                alert('Зарезервировано')
-            } else if (e.response.status === 403) {
-                alert('Нет прав на просмотр')
-            } else if (e.response.status === 404) {
-                alert('Связь с сервером установлена, но данных по заданному запросу на сервере нет')
+                // alert('There is no such city')
+                setError('There is no such city')
+            } else if (e?.response?.status === 401) {
+                setError('Вы не авторизованы')
+            } else if (e?.response?.status === 402) {
+                setError('Зарезервировано')
+            } else if (e?.response?.status === 403) {
+                setError('Нет прав на просмотр')
+            } else if (e?.response?.status === 404) {
+                setError('Связь с сервером установлена, но данных по заданному запросу на сервере нет')
             } else {
-                alert('server is temporarily unavailable')
+                setError('server is temporarily unavailable')
             }
         } finally {
             setIsLoading(false)
@@ -48,13 +52,17 @@ const App = () => {
             {isLoading ?
                 <Loading />
                 :
-                <>
                     <Card
                         witherData={witherData}
                     />
-                </>
+
 
         }
+        <div className="e-div"
+             setError={setError}
+        >
+            {error && <h1 className='error-h1'>{error}</h1>}
+        </div>
         </div>
     );
 };

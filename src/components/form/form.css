@@ -27,7 +27,7 @@
 
 .button-search {
     position: absolute;
-    top: 14vh;
+    top: 10vh;
     right: 146vh;
     background-color: transparent;
     border: none;
@@ -50,4 +50,6 @@
 .delete {
     width: 47px;
     height: 47px;
+    background-color: #D9D9D9;
+    border: none;
 }

@@ -19,7 +19,7 @@ const Card = (props) => {
                         <h1 className='name-h1'>{witherData?.location?.name} </h1>
                         <img src={imgLoc} alt=""/>
                     </div>
-                    <h1 className='data-h1'>May 9, Thu</h1>
+                    <h1 className='data-h1'>{witherData?.current?.last_updated}</h1>
                 </div>
 
                 <div className='temp'>

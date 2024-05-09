@@ -7,6 +7,7 @@ const Form = (props) => {
 
     const  {
         getWither,
+        setError
     } = props
 
     const [InputValue, setInputValue] = useState('')
@@ -33,9 +34,12 @@ const Form = (props) => {
                 className='delete
                            search-hover
                            wh-but'
-                onClick={() => getWither('Bishkek')}
+                onClick={() => {
+                    getWither('Bishkek')
+                }
+            }
             >
-                <img className='delete' src={Delete} alt=""/>
+                <img className='delete search-hover' src={Delete} alt=""/>
             </button>
         </div>
     );

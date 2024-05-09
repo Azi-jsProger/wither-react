@@ -7,7 +7,7 @@ const Loading = () => {
         display: 'flex' ,
         justifyContent: 'center' ,
         alignItems: 'center' ,
-        height:'58dvh' ,
+        height:'58vh' ,
         padding: '35px 28px'
     }
 

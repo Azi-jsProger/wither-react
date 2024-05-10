@@ -50,6 +50,7 @@ const App = () => {
         <div className='container'>
             <Form
                 getWither={getWither}
+                setError={setError}
             />
             {isLoading ?
                 <Loading />
@@ -60,9 +61,7 @@ const App = () => {
 
 
         }
-        <div className="e-div"
-             setError={setError}
-        >
+        <div className="e-div">
             {error && <h1 className='error-h1'>{error}</h1>}
         </div>
         </div>

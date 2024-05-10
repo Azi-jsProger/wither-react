@@ -13,6 +13,12 @@ const Form = (props) => {
     const [InputValue, setInputValue] = useState('')
 
 
+    // function  delError()  {
+    //     getWither('Bishkek')
+    //     setError(null)
+    //     setInputValue('')
+    // }
+
     return (
         <div className='form-parents'>
             <input
@@ -20,6 +26,7 @@ const Form = (props) => {
                 placeholder='Search location...'
                 className='input-search search-hover'
                 onChange={(e) => setInputValue(e.target.value) }
+                value={InputValue}
             />
 
             <button
@@ -37,9 +44,9 @@ const Form = (props) => {
                            wh-but'
                 onClick={() => {
                     getWither('Bishkek')
+                    setInputValue('')
                     setError(null)
-                }
-            }
+                }}
             >
                 <img className='delete search-hover' src={Delete} alt=""/>
             </button>

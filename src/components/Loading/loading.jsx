@@ -8,6 +8,7 @@ const Loading = () => {
         justifyContent: 'center' ,
         alignItems: 'center' ,
         height:'58vh' ,
+        width:'115vh',
         padding: '35px 28px'
     }
 

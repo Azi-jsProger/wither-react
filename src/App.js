@@ -16,8 +16,10 @@ const App = () => {
 
         console.log(witherData)
 
+
+
         try {
-            const response = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${city}&aqi=no`)
+            const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${city}&aqi=no`)
             setWitherData(response.data)
         } catch (e) {
             if (e?.response?.status === 400) {

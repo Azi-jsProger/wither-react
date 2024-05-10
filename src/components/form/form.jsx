@@ -12,6 +12,7 @@ const Form = (props) => {
 
     const [InputValue, setInputValue] = useState('')
 
+
     return (
         <div className='form-parents'>
             <input
@@ -36,6 +37,7 @@ const Form = (props) => {
                            wh-but'
                 onClick={() => {
                     getWither('Bishkek')
+                    setError(null)
                 }
             }
             >

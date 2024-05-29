@@ -13,7 +13,7 @@ const Loading = () => {
     }
 
     return (
-        <Box styles={styles}>
+        <Box style={styles}>
             <CircularProgress color="secondary" />
         </Box>
     );

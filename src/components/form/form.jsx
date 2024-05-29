@@ -33,7 +33,10 @@ const Form = (props) => {
                 className='button-search
                             search-hover
                             wh-but'
-                onClick={ () => getWither(InputValue)}
+                onClick={() => {
+                    getWither(InputValue)
+                    setError(null)
+                }}
             >
                 <img src={imageSearch} alt=""/>
             </button>
